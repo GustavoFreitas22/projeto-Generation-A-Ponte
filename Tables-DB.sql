@@ -13,6 +13,7 @@ CREATE TABLE tb_tema (
 	saude varchar(255) NOT NULL,
 	alimentacao varchar(255) NOT NULL,
 	educacao varchar(255) NOT NULL,
+	descricao varchar(255) NOT NULL,
 	PRIMARY KEY (id)
 );
 
