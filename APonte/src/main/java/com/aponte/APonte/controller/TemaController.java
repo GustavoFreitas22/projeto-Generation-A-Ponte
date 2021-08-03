@@ -11,9 +11,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aponte.APonte.controller.blogPessoal.controller.Categoria;
 import com.aponte.APonte.model.Tema;
 import com.aponte.APonte.repository.TemaRepository;
 
@@ -30,6 +34,17 @@ public class TemaController {
         return ResponseEntity.ok(repository.findAll());
 
     }
+	
+	
+	@PostMapping
+    public ResponseEntity<Tema> post(@RequestBody Tema tema ) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
+    }
+	
+	@PutMapping
+    public ResponseEntity<Tema> put(@RequestBody Tema tema) {
+        return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
+	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Tema> getById(@PathVariable long id){
