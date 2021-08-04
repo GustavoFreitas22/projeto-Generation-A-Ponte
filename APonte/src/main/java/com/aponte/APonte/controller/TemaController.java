@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aponte.APonte.controller.blogPessoal.controller.Categoria;
 import com.aponte.APonte.model.Tema;
 import com.aponte.APonte.repository.TemaRepository;
 
