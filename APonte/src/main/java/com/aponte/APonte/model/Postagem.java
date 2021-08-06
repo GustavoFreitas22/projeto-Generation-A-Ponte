@@ -35,6 +35,8 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagens")
 	private Tema tema;
+	
+	
 
 	public long getId() {
 		return id;
