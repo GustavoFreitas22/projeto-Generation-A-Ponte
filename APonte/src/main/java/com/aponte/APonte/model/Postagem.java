@@ -33,7 +33,7 @@ public class Postagem {
 	private int qtd_likes;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("postagens")
+	@JsonIgnoreProperties("postagens") // qualquer coisa tira o "S"
 	private Tema tema;
 	
 	@ManyToOne

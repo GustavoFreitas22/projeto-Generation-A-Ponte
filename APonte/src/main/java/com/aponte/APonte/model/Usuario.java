@@ -1,5 +1,7 @@
 package com.aponte.APonte.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,10 +26,13 @@ public class Usuario {
 	@NotNull
 	private String nome;
 	
+	@NotNull
+	private String usuario; // login 
+	
 	@Size(max = 100, min = 0)
 	private String email;
 	
-	@Size(max = 10, min = 4)
+	@Size(min = 8, message = "O atributo senha deve ter no mínimo 8 caracteres")
 	private String senha;
 	
 	@Size(max = 100, min = 0)
@@ -37,7 +43,7 @@ public class Usuario {
 	
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE )
 	@JsonIgnoreProperties ("usuario")
-	private Postagem postagens;
+	private List<Postagem> postagens;
 	
 	
 	public String getSenha() {
@@ -64,12 +70,12 @@ public class Usuario {
 		this.registro = registro;
 	}
 
-	public Postagem getPostagem() {
+	public List<Postagem> getPostagem() {
 		return postagens;
 	}
 
-	public void setPostagem(Postagem postagem) {
-		this.postagens = postagem;
+	public void setPostagem(List<Postagem> postagens) {
+		this.postagens = postagens;
 	}
 
 	public long getId() {
@@ -94,6 +100,13 @@ public class Usuario {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	

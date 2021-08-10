@@ -21,14 +21,11 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
-	private String saude;
+	private boolean saude;
 	
-	@NotNull
-	private String alimentacao;
+	private boolean alimentacao;
 	
-	@NotNull
-	private String educacao;
+	private boolean educacao;
 	
 	@NotNull
 	private String descricao;
@@ -49,27 +46,27 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getSaude() {
+	public boolean getSaude() {
 		return saude;
 	}
 
-	public void setSaude(String saude) {
+	public void setSaude(boolean saude) {
 		this.saude = saude;
 	}
 
-	public String getAlimentacao() {
+	public boolean getAlimentacao() {
 		return alimentacao;
 	}
 
-	public void setAlimentacao(String alimentacao) {
+	public void setAlimentacao(boolean alimentacao) {
 		this.alimentacao = alimentacao;
 	}
 
-	public String getEducacao() {
+	public boolean getEducacao() {
 		return educacao;
 	}
 
-	public void setEducacao(String educacao) {
+	public void setEducacao(boolean educacao) {
 		this.educacao = educacao;
 	}
 

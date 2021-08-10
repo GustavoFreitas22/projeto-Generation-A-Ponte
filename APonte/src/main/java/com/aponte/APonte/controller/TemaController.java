@@ -22,7 +22,7 @@ import com.aponte.APonte.repository.TemaRepository;
 
 @RestController
 @RequestMapping ("/tema")
-@CrossOrigin ("*")
+@CrossOrigin(value = "*", allowedHeaders = "*" )
 public class TemaController {
 
 	@Autowired 
