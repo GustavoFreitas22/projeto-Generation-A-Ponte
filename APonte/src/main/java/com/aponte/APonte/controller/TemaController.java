@@ -31,9 +31,7 @@ public class TemaController {
 	@GetMapping
 	public ResponseEntity<List<Tema>> GetAll() {
         return ResponseEntity.ok(repository.findAll());
-
     }
-	
 	
 	@PostMapping
     public ResponseEntity<Tema> post(@RequestBody Tema tema ) {

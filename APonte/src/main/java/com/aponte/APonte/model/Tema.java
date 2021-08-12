@@ -32,10 +32,18 @@ public class Tema {
 	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
-	private List<Postagem>postagens;
+	private List<Postagem>postagem;
 	
 	public Tema() {
 		super();
+	}
+
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
 	}
 
 	public long getId() {
